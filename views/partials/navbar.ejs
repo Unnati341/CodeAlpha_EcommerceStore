@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold fs-3" href="/">
+            MyShop
+        </a>
+
+        <form action="/products"
+              method="GET"
+              class="d-flex mx-auto"
+              style="width:450px;">
+
+            <input
+                type="text"
+                name="search"
+                class="form-control rounded-pill"
+                placeholder="Search products...">
+
+            <button class="btn btn-dark rounded-pill ms-2">
+                Search
+            </button>
+
+        </form>
+
+        <div class="d-flex align-items-center gap-2">
+
+            <a href="/" class="btn btn-light">
+                Home
+            </a>
+
+            <% if(user){ %>
+
+                <a href="/cart" class="btn btn-light">
+                    Cart
+                    <span class="badge rounded-pill bg-warning text-dark">
+    <%= cartCount %>
+</span>
+                </a>
+
+                <a href="/orders" class="btn btn-light">
+                    Orders
+                </a>
+
+                <a href="/logout" class="btn btn-dark">
+                    Logout
+                </a>
+
+            <% } else { %>
+
+                <a href="/login" class="btn btn-outline-dark">
+                    Login
+                </a>
+
+                <a href="/register" class="btn btn-dark">
+                    Register
+                </a>
+
+            <% } %>
+
+        </div>
+
+    </div>
+
+</nav>
